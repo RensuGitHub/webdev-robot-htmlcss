@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<title>PA-Bot</title>
+<style>
+
+body {
+    background-image: url('../../robotbg.png');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	font-family: sans Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+}
+
+h1 {
+	font-size: 5em;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	width: 100%;
+	top: 30%;
+	left: 58%;
+	transform: translateX(-50%) translateY(-50%);
+	text-shadow:0 2px 3px white;
+	
+}
+
+/* Middle Body */
+.RoBodySide {
+    width: 15%;
+    height: 13%;
+    -webkit-transform: skew(21deg);
+    background: #1C3059;
+    position: absolute;
+    left: 37.2%;
+    top: 60%;
+    rotate: 21deg;
+    /*
+    width: 20%;
+    height: 20%;
+    background: rgb(86, 145, 255);
+    border-radius: 0%;
+    left: 37.2%;
+    top: 25%;
+    rotate: 30deg;
+    position: absolute;
+    */
+} 
+
+/*
+.RoBodyFrontSideTrapezoid {
+    --
+    border-bottom: 20% solid rgb(86, 145, 255);
+    border-left: 20% solid transparent;
+    border-right: 20% solid transparent;
+    width: 20%;
+    height: 20%;
+    left: 37.2%;
+    top: 25%;
+    --
+    rotate: 90deg;
+    width: 3%;
+    top: 64.8%;
+    left: 51.7%;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 100px solid rgba(140,221,255,1.00);
+    position: absolute;
+} 
+*/
+	
+.MiddleFlat {
+	width: 20%;
+	height: 10%;
+	top: 54.5%;
+	left: 44.2%;
+	-webkit-transform: skew(69deg);
+	background: #3B466D;
+	position: absolute;
+}	
+	
+.RoBodyFrontTop {
+	width: 20%;
+    height: 4%;
+	top: 64.6%;
+	left: 52.5%;
+    -webkit-transform: skew(45deg);
+    background: #4E5D8E;
+    position: absolute;
+	
+}
+
+.BackMiddleCircle {
+	width: 7.2%;
+	height: 13.6%;
+	border-radius: 50%;
+	
+	background: #13213D;
+	position: absolute;
+	top: 54.6%;
+	left: 34.5%;
+	
+}
+
+.RoBodyFrontBottom {
+	width: 20.1%;
+	height: 4.2%;
+	top: 74.4%;
+	left: 52.5%;
+	position: absolute;
+	-webkit-transform: skew(-45deg);
+	background: #18294C;
+}
+
+.RoBodyFrontFront {
+	width: 20%;
+	height: 5.9%;
+	top: 68.5%;
+	left: 53.6%;
+	background: #6377B5;
+	position: absolute;
+}
+
+.RoBodyFrontSide {
+	width: 5%;
+	height: 13.5%;
+	top: 64.6%;
+	left: 51.5%;
+	background: #243E72;
+	position: absolute;
+}
+	
+/* Middle Upper */
+	
+.RoBodyUpperTop {
+	width: 10%;
+    height: 6.4%;
+	top: 41.4%;
+	left: 48.5%;
+    -webkit-transform: skew(69deg);
+    background: #263051;
+    position: absolute;
+}
+	
+.RoBodyUpperSide {
+	width: 8.6%;
+    height: 13%;
+    -webkit-transform: skew(21deg);
+    background: #3A4054;
+    position: absolute;
+    left: 44.2%;
+    top: 45.1%;
+    rotate: 21deg;
+}
+
+.RoBodyUpperFront {
+	width: 10%;
+	height: 14%;
+	position: absolute;
+	background: #616B8E;
+	top: 47.5%;
+	left: 52.5%;
+}
+
+/* Bottom Part*/
+
+.LeftWheels {
+	width: 10%;
+	height: 5%;
+	background: #E5E5E5;
+	position: absolute;
+	-webkit-transform: skew(20deg);
+	top: 70%;
+	left: 39.1%;
+	rotate: 21deg;
+}
+
+.LeftWheelsLeft {
+	width: 2.5%;
+	height: 5%;
+	border-radius: 50%;
+	background: #FFFFFF;
+	position: absolute;
+	top: 67%;
+	left: 38.4%;
+}
+	
+.LeftWheelsRight {
+	width: 2.5%;
+	height: 5%;
+	border-radius: 50%;
+	background: #FFFFFF;
+	position: absolute;
+	top: 74.3%;
+	left: 48.2%;
+}
+	
+.RightWheelsRight {
+	width: 2.5%;
+	height: 5%;
+	border-radius: 50%;
+	background: #FFFFFF;
+	position: absolute;
+	top: 74.3%;
+	left: 64.2%;
+}
+
+/* Top Part */
+
+.TopNeck {
+	width: 2%;
+	height: 15%;
+	top: 30%;
+	left: 51.9%;
+	position: absolute;
+	background: #808080;
+}
+
+.TopNeckBelow {
+	width: 2%;
+	height: 2%;
+	top: 44.2%;
+	left: 51.9%;
+	border-radius: 70%;
+	position: absolute;
+	background: #808080;
+}
+
+.TopScreen {
+	width: 25%;
+	height: 27%;
+	top: 12%;
+	left: 40.4%;
+	position: absolute;
+	background: #00FFDB;
+	border-radius: 2%;
+	rotate: -7deg;
+	border-top: 3px #2A2A2A;
+	box-shadow:0 0 30px 15px #0ff;
+}
+	
+.LeftEye {
+		width: 3%;
+		height: 16%;
+		top: 18%;
+		left: 48%;
+		background: #00D5E0;
+		position: absolute;
+		border-radius: 10%;
+		rotate: -7deg;
+		box-shadow:0 0 5px 2.5px #00D5E0;
+	}
+	
+.RightEye {
+		width: 3%;
+		height: 16%;
+		top: 16.3%;
+		left: 55%;
+		background: #00D5E0;
+		position: absolute;
+		border-radius: 10%;
+		rotate: -7deg;
+		box-shadow:0 0 5px 2.5px #00D5E0;
+	}
+
+
+/* Hands */
+
+	.LeftArm {
+		width: 10%;
+		height: 1.9%;
+		top: 47%;
+		left: 37%;
+		position: absolute;
+		background: #808080;
+		rotate: 9deg;
+	}
+	
+	.LeftCrankRotational {
+		width: 2.5%;
+		height: 5%;
+		border-radius: 50%;
+		background: #009BAF;
+		position: absolute;
+		top: 47%;
+		left: 45.4%;
+	}
+	
+	.LeftCrankRotationalSmol {
+		width: 1.2%;
+		height: 2.4%;
+		border-radius: 50%;
+		background: red;
+		position: absolute;
+		top: 47.95%;
+		left: 45.1%;
+	}
+	
+	.LeftCrankRotationalSmol2 {
+		width: 1.2%;
+		height: 2.4%;
+		border-radius: 50%;
+		background: red;
+		position: absolute;
+		top: 45.65%;
+		left: 37.1%;
+	}
+	
+	.LeftCrankFinger1 {
+		width: 3%;
+		height: 2%;
+		top: 43.8%;
+		left: 35%;
+		background: blue;
+		position: absolute;
+		rotate: 45deg;
+	}
+	
+	.LeftCrankFinger2 {
+		width: 2.3%;
+		height: 1.5%;
+		top: 43.1%;
+		left: 33.9%;
+		background: blue;
+		position: absolute;
+		rotate: 135deg;
+	}
+	
+	.LeftCrankFinger3 {
+		width: 3%;
+		height: 2%;
+		top: 46.9%;
+		left: 35%;
+		background: blue;
+		position: absolute;
+		rotate: 135deg;
+	}
+	
+	.LeftCrankFinger4 {
+		width: 2.3%;
+		height: 1.5%;
+		top: 48.1%;
+		left: 33.9%;
+		background: blue;
+		position: absolute;
+		rotate: 45deg;
+	}
+	
+	.RightArm {
+		width: 10%;
+		height: 1.9%;
+		top: 53%;
+		left: 60%;
+		position: absolute;
+		background: #808080;
+		rotate: 9deg;
+	}
+	
+	.RightCrankRotationalSmol {
+		width: 1.2%;
+		height: 2.4%;
+		border-radius: 50%;
+		background: red;
+		position: absolute;
+		top: 53.95%;
+		left: 68.5%;
+	}
+	
+	.RightCrankFinger1 {
+		width: 3%;
+		height: 2%;
+		top: 52.3%;
+		left: 69.4%;
+		background: blue;
+		position: absolute;
+		rotate: 135deg;
+	}
+	
+	.RightCrankFinger2 {
+		width: 2.3%;
+		height: 1.5%;
+		top: 52.3%;
+		left: 71.2%;
+		background: blue;
+		position: absolute;
+		rotate: 45deg;
+	}
+	
+	.RightCrankFinger3 {
+		width: 3%;
+		height: 2%;
+		top: 56.3%;
+		left: 69.4%;
+		background: blue;
+		position: absolute;
+		rotate: 45deg;
+	}
+	
+	.RightCrankFinger4 {
+		width: 2.3%;
+		height: 1.5%;
+		top: 56.8%;
+		left: 71.3%;
+		background: blue;
+		position: absolute;
+		rotate: 135deg;
+	}
+	
+	
+</style>
+
+<body>
+	
+	<h1>Meet P-A.</h1>
+
+	<div class="LeftWheels"></div>
+	<div class="LeftWheelsLeft"></div>
+	<div class="LeftWheelsRight"></div>
+	<div class="RightWheelsRight"></div>
+	<div class="RoBodyFrontSide"></div>
+	<div class="BackMiddleCircle"></div>
+	<div class="RoBodyFrontBottom"></div>
+	<div class="MiddleFlat"></div>
+    <div class="RoBodySide"></div>
+    <div class="RoBodyFrontTop"></div>
+	<div class="RightArm"></div>
+	<div class="RightCrankFinger1"></div>
+	<div class="RightCrankFinger2"></div>
+	<div class="RightCrankFinger3"></div>
+	<div class="RightCrankFinger4"></div>
+	<div class="RightCrankRotationalSmol"></div>
+    <div class="RoBodyFrontFront"></div>
+	<div class="RoBodyUpperFront"></div>
+	<div class="RoBodyUpperSide"></div>
+	<div class="RoBodyUpperTop"></div>
+	<div class="TopNeckBelow"></div>
+	<div class="TopNeck"></div>
+	<div class="TopScreen"></div>
+	<div class="LeftArm"></div>
+	<div class="LeftCrankRotational"></div>
+	<div class="LeftCrankRotationalSmol"></div>
+	<div class="LeftCrankFinger1"></div>
+	<div class="LeftCrankFinger2"></div>
+	<div class="LeftCrankFinger3"></div>
+	<div class="LeftCrankFinger4"></div>
+	<div class="LeftCrankRotationalSmol2"></div>
+	<div class="LeftEye"></div>
+	<div class="RightEye"></div>
+	
+	
+</body>
+</html>
